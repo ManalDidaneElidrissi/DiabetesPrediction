@@ -2,10 +2,13 @@ from django.shortcuts import render
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+
 def home(request):
     return render(request, 'home.html')
+
 def predict(request):
     return render(request, 'predict.html')
+
 def result(request):
     data = pd.read_csv(r"diabetes.csv")
     X = data.drop("Outcome", axis=1)
